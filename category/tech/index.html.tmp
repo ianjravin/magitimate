@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="pingback" href="http://jollythemes.com/wordpress/magtimate/xmlrpc.php">
+
+	<title>Tech &#8211; Magtimate Magazine WordPress Theme</title>
+<link rel="alternate" type="application/rss+xml" title="Magtimate Magazine WordPress Theme &raquo; Feed" href="http://jollythemes.com/wordpress/magtimate/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Magtimate Magazine WordPress Theme &raquo; Comments Feed" href="http://jollythemes.com/wordpress/magtimate/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Magtimate Magazine WordPress Theme &raquo; Tech Category Feed" href="http://jollythemes.com/wordpress/magtimate/category/tech/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/jollythemes.com\/wordpress\/magtimate\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.14"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-polls-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/wp-polls/polls-css.css?ver=2.72' type='text/css' media='all' />
+<style id='wp-polls-inline-css' type='text/css'>
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background-image: url('http://jollythemes.com/wordpress/magtimate/wp-content/plugins/wp-polls/images/default/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+
+</style>
+<link rel='stylesheet' id='megamenu-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/uploads/maxmegamenu/style.css?ver=cccc73' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='http://jollythemes.com/wordpress/magtimate/wp-includes/css/dashicons.min.css?ver=4.4.14' type='text/css' media='all' />
+<link rel='stylesheet' id='js_composer_front-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=4.11.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/themes/magtimate/css/bootstrap.min.css?ver=3.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='magtimate-fonts-css'  href='https://fonts.googleapis.com/css?family=Montserrat%3A400%2C700%7CRaleway%3A300%2C500%2C600%2C700%2C400&#038;subset=latin%2Clatin-ext&#038;ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='magtimate-icons-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/themes/magtimate/css/font-awesome.min.css?ver=4.2.0' type='text/css' media='all' />
+<link rel='stylesheet' id='magtimate-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/themes/magtimate/style.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='magtimate-shortcodes-css'  href='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/magtimate-vc-addons//assets/css/frontend.css?ver=1.0.0' type='text/css' media='all' />
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/themes/magtimate/js/html5shiv.min.js?ver=3.7.2'></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/themes/magtimate/js/respond.min.js?ver=1.4.2'></script>
+<![endif]-->
+<link rel='https://api.w.org/' href='http://jollythemes.com/wordpress/magtimate/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://jollythemes.com/wordpress/magtimate/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://jollythemes.com/wordpress/magtimate/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.14" />
+<style type="text/css">.site-header .logo img {  }</style><meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="http://jollythemes.com/wordpress/magtimate/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><!--[if IE  8]><link rel="stylesheet" type="text/css" href="http://jollythemes.com/wordpress/magtimate/wp-content/plugins/js_composer/assets/css/vc-ie8.min.css" media="screen"><![endif]--><noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript></head>
+
+<body class="archive category category-tech category-21 group-blog content-sidebar firebrick primary-mega-menu header-light wpb-js-composer js-comp-ver-4.11.1 vc_responsive">
+	<div id="loader">
+		<div class="loader"></div>
+	</div>
+	<div id="page" class="hfeed site wide">
+
+		<header id="site-header" class="site-header" role="banner">
+						<div class="topbar">
+				<div class="container">
+					<div class="row">
+													<nav class="navbar topbar-left topbar-content col-xs-12 col-sm-6">
+								<div class="menu-top-menu-container"><ul id="menu-top-menu" class="nav navbar-nav"><li id="menu-item-2346" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2346"><a href="http://jollythemes.com/wordpress/magtimate/homepage-3/">Home</a></li>
+<li id="menu-item-2349" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-2349"><a href="http://jollythemes.com/wordpress/magtimate/blog/">Blog</a></li>
+<li id="menu-item-2351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2351"><a href="http://jollythemes.com/wordpress/magtimate/contact-us/">Contact</a></li>
+</ul></div>							</nav>
+						
+						<div class="topbar-right topbar-content text-right col-xs-12 col-sm-6">
+							<a href="#" class="social-link fa fa-facebook"></a><a href="#" class="social-link fa fa-twitter"></a><a href="#" class="social-link fa fa-google"></a><a href="#" class="social-link fa fa-tumblr"></a><a href="#" class="social-link fa fa-flickr"></a>						</div>
+					</div>
+				</div>
+			</div>
+						<div class="header-main">
+				<div class="container">
+					<div class="row">
+						<div class="site-branding col-xs-12 col-sm-3">
+													<a href="http://jollythemes.com/wordpress/magtimate" class="logo"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2016/04/frontlogo.png" alt="Magtimate Magazine WordPress Theme"></a>
+							<p class="site-title"><a href="http://jollythemes.com/wordpress/magtimate/" rel="home">Magtimate Magazine WordPress Theme</a></p>							<p class="site-description">Just another WordPress site</p>
+						</div><!-- .site-branding -->
+
+													<div class="header-sidebar text-right col-xs-12 col-sm-9">
+								<div id="text-2" class="widget widget_text">			<div class="textwidget"><a href="#"><img src="http://wordpress-11347-25007-103239.cloudwaysapps.com/wp-content/uploads/2016/04/banner_top.png" alt="ads image"></a></div>
+		</div>							</div>
+											</div>
+				</div>
+			</div>
+
+			<nav id="primary-nav" class="primary-nav navbar" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-nav-collapse">
+							<span class="sr-only">Menu</span>
+							<i class="fa fa-bars"></i>
+						</button>
+					</div>
+
+					<div class="menu-item-search nav-search-header">
+						<i class="fa fa-search"></i>
+						<form role="search" method="get" class="search-form" action="http://jollythemes.com/wordpress/magtimate/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>					</div>
+					<div id="mega-menu-wrap-primary" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-right' id='mega-toggle-block-1'></div></div><ul id="mega-menu-primary" class="mega-menu mega-menu-horizontal mega-no-js" data-event="hover" data-effect="disabled" data-second-click="close" data-document-click="collapse" data-reverse-mobile-items="true" data-vertical-behaviour="standard" data-breakpoint="768"><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-2331' id='mega-menu-item-2331'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/">Home</a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2334' id='mega-menu-item-2334'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/">Home Page 1</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2329' id='mega-menu-item-2329'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/homepage-2/">Home Page 2</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-2335' id='mega-menu-item-2335'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/homepage-3/">Home Page 3</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-2309' id='mega-menu-item-2309'><a class="mega-menu-link" href="#">Categories</a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-10' id='mega-menu-item-nav_menu-10'><h4 class="mega-block-title">News</h4><div class="menu-footer-menu-1-container"><ul id="menu-footer-menu-1" class="menu"><li id="menu-item-2249" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2249"><a href="http://jollythemes.com/wordpress/magtimate/category/news/nation/">Nation</a></li>
+<li id="menu-item-2100" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2100"><a href="http://jollythemes.com/wordpress/magtimate/category/news/world/">World</a></li>
+<li id="menu-item-2096" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2096"><a href="http://jollythemes.com/wordpress/magtimate/category/news/funny/">Funny</a></li>
+<li id="menu-item-2251" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2251"><a href="http://jollythemes.com/wordpress/magtimate/category/news/politics/">Politics</a></li>
+<li id="menu-item-2099" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2099"><a href="http://jollythemes.com/wordpress/magtimate/category/news/weather/">Weather</a></li>
+</ul></div></li><li class='mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-11' id='mega-menu-item-nav_menu-11'><h4 class="mega-block-title">Music</h4><div class="menu-footer-menu-2-container"><ul id="menu-footer-menu-2" class="menu"><li id="menu-item-2250" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2250"><a href="http://jollythemes.com/wordpress/magtimate/category/music/hip-hoprap/">Hip Hop/Rap</a></li>
+<li id="menu-item-2254" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2254"><a href="http://jollythemes.com/wordpress/magtimate/category/music/pop/">Pop</a></li>
+<li id="menu-item-2256" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2256"><a href="http://jollythemes.com/wordpress/magtimate/category/music/rb/">R&#038;B</a></li>
+<li id="menu-item-2101" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2101"><a href="http://jollythemes.com/wordpress/magtimate/category/music/electric-and-disco/">Electric and Disco</a></li>
+<li id="menu-item-2252" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2252"><a href="http://jollythemes.com/wordpress/magtimate/category/music/latino/">Latino</a></li>
+<li id="menu-item-2268" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2268"><a href="http://jollythemes.com/wordpress/magtimate/category/music/ragga/">Ragga</a></li>
+<li id="menu-item-2270" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2270"><a href="http://jollythemes.com/wordpress/magtimate/category/music/rock-and-roll/">Rock and Roll</a></li>
+</ul></div></li><li class='mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-12' id='mega-menu-item-nav_menu-12'><h4 class="mega-block-title">Tech</h4><div class="menu-footer-menu-4-container"><ul id="menu-footer-menu-4" class="menu"><li id="menu-item-2292" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2292"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/mobiles/">Mobiles</a></li>
+<li id="menu-item-2298" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2298"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/tablets-ipads/">Tablets / Ipads</a></li>
+<li id="menu-item-2286" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2286"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/desktops/">Desktops</a></li>
+<li id="menu-item-2288" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2288"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/gadgets/">Gadgets</a></li>
+<li id="menu-item-2279" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2279"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/home-electronics/">Home Electronics</a></li>
+<li id="menu-item-2294" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2294"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/outside-electronic/">Outside Electronic</a></li>
+<li id="menu-item-2296" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2296"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/sound-devices/">Sound Devices</a></li>
+</ul></div></li><li class='mega-menu-item mega-menu-item-type-widget widget_nav_menu mega-menu-columns-2-of-8 mega-menu-item-nav_menu-13' id='mega-menu-item-nav_menu-13'><h4 class="mega-block-title">Games</h4><div class="menu-footer-menu-5-container"><ul id="menu-footer-menu-5" class="menu"><li id="menu-item-2293" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2293"><a href="http://jollythemes.com/wordpress/magtimate/category/games/pc/">PC</a></li>
+<li id="menu-item-2295" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2295"><a href="http://jollythemes.com/wordpress/magtimate/category/games/playstation/">Playstation</a></li>
+<li id="menu-item-2300" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2300"><a href="http://jollythemes.com/wordpress/magtimate/category/games/mobile-games/">Mobile Games</a></li>
+<li id="menu-item-2297" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2297"><a href="http://jollythemes.com/wordpress/magtimate/category/games/portable-consoles/">Portable Consoles</a></li>
+<li id="menu-item-2299" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2299"><a href="http://jollythemes.com/wordpress/magtimate/category/games/xbox-one/">Xbox One</a></li>
+<li id="menu-item-2302" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2302"><a href="http://jollythemes.com/wordpress/magtimate/category/games/nintendo/">Nintendo</a></li>
+</ul></div></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-megamenu mega-menu-item-2311' id='mega-menu-item-2311'><a class="mega-menu-link" href="#">Entertainment</a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-widget category-posts-tabs-widget tabs-widget mega-menu-columns-1-of-1 mega-menu-item-category-posts-tabs-widget-2' id='mega-menu-item-category-posts-tabs-widget-2'>
+		<div class="cat-posts-tabs tabs">
+			<ul class="tabs-nav">
+				<li><a href="#" class="active">Health</a></li><li><a href="#">Lifestyle</a></li><li><a href="#">Sports</a></li><li><a href="#">Travel</a></li>			</ul>
+								<div class="tab-posts-cat-6 tabs-panel active">
+						
+						<div class="first-post clearfix post-568 post type-post status-publish format-image has-post-thumbnail hentry category-health tag-featured post_format-post-format-image">
+							<a href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/" class="post-thumbnail">
+								<img width="1170" height="675" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/06/Love-Couple-Wallpaper-1-1-1170x675.jpg" class="attachment-magtimate_gallery-thumb-large size-magtimate_gallery-thumb-large" alt="Love-Couple-Wallpaper-1" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T05:00:39+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/">Amazing love stories</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2054 post type-post status-publish format-image has-post-thumbnail hentry category-health category-lifestyle post_format-post-format-image">
+							<a href="http://jollythemes.com/wordpress/magtimate/fresh-summer-cocktail/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/404961-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="404961" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/admin/" title="View all posts by admin" rel="author">
+										admin									</a>
+								</span>
+								<time class="entry-date" datetime="2015-05-31T17:16:12+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>31 May 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/fresh-summer-cocktail/">Fresh summer cocktail</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2032 post type-post status-publish format-standard has-post-thumbnail hentry category-health category-lifestyle">
+							<a href="http://jollythemes.com/wordpress/magtimate/fresh-berries-are-rolling-into-my-supermarket/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/sweet-berries-wallpaper-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="sweet berries wallpaper" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/admin/" title="View all posts by admin" rel="author">
+										admin									</a>
+								</span>
+								<time class="entry-date" datetime="2015-05-31T16:53:54+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>31 May 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/fresh-berries-are-rolling-into-my-supermarket/">Fresh berries are rolling into my supermarket</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2019 post type-post status-publish format-image has-post-thumbnail hentry category-health category-work post_format-post-format-image">
+							<a href="http://jollythemes.com/wordpress/magtimate/how-to-make-sushi-at-home/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/Sushi-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="Sushi" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/admin/" title="View all posts by admin" rel="author">
+										admin									</a>
+								</span>
+								<time class="entry-date" datetime="2015-05-31T16:42:47+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>31 May 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/how-to-make-sushi-at-home/">How to make sushi at home</a></p>
+							</div>
+						</div>
+
+											</div>
+									<div class="tab-posts-cat-7 tabs-panel ">
+						
+						<div class="first-post clearfix post-187 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle category-travel tag-featured">
+							<a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" class="post-thumbnail">
+								<img width="1170" height="675" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/12/modern-metal-statue-in-a-chicago-1-1170x675.jpg" class="attachment-magtimate_gallery-thumb-large size-magtimate_gallery-thumb-large" alt="modern-metal-statue-in-a-chicago" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/admin/" title="View all posts by admin" rel="author">
+										admin									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T06:11:37+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/">Wonderful city park at dusk</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2022 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle category-web-design tag-featured">
+							<a href="http://jollythemes.com/wordpress/magtimate/city-night-building/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/paris-36-preview-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="paris-36-preview" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T06:00:06+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/city-night-building/">City Night Building</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-555 post type-post status-publish format-gallery has-post-thumbnail hentry category-fashion category-lifestyle tag-featured post_format-post-format-gallery">
+							<a href="http://jollythemes.com/wordpress/magtimate/summer-women-gucci-sunglasses/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/11/gucci-sunglasses-for-womenspring-summer-11-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="gucci-sunglasses-for-womenspring-summer-1" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T04:00:14+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/summer-women-gucci-sunglasses/">Summer women gucci sunglasses</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-1993 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion category-lifestyle category-travel tag-featured">
+							<a href="http://jollythemes.com/wordpress/magtimate/summer-flip-flops-on-the-beach/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/sun_sand_sunglasses-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="sun_sand_sunglasses" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T03:45:40+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/summer-flip-flops-on-the-beach/">Summer flip flops on the beach</a></p>
+							</div>
+						</div>
+
+											</div>
+									<div class="tab-posts-cat-20 tabs-panel ">
+						
+						<div class="first-post clearfix post-1874 post type-post status-publish format-standard has-post-thumbnail hentry category-entertainment category-events category-games category-mobile-games category-nintendo category-pc category-sports tag-featured">
+							<a href="http://jollythemes.com/wordpress/magtimate/list-of-sport-utility-vehicles/" class="post-thumbnail">
+								<img width="1170" height="675" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/11/vehicles_atv_sports_1920x1080-1-1170x675.jpg" class="attachment-magtimate_gallery-thumb-large size-magtimate_gallery-thumb-large" alt="vehicles_atv_sports_1920x1080" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T03:50:10+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/list-of-sport-utility-vehicles/">List of sport utility vehicles</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2048 post type-post status-publish format-image has-post-thumbnail hentry category-sports post_format-post-format-image">
+							<a href="http://jollythemes.com/wordpress/magtimate/bungee-jump/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/jumpan-bungee-jumping-154639-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="jumpan-bungee-jumping-154639" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-05-31T17:09:45+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>31 May 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/bungee-jump/">Bungee jump</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2038 post type-post status-publish format-standard has-post-thumbnail hentry category-entertainment category-lifestyle category-sports">
+							<a href="http://jollythemes.com/wordpress/magtimate/2013-bmw-f10-m5-4-4-liter-v8/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/2013-BMW-F10-M5-4.4-liter-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="w" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/admin/" title="View all posts by admin" rel="author">
+										admin									</a>
+								</span>
+								<time class="entry-date" datetime="2015-05-31T17:00:13+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>31 May 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/2013-bmw-f10-m5-4-4-liter-v8/">2013 BMW F10 M5 4.4-liter V8</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2044 post type-post status-publish format-video has-post-thumbnail hentry category-entertainment category-games category-sports tag-featured post_format-post-format-video">
+							<a href="http://jollythemes.com/wordpress/magtimate/orange-county-bmw/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/orange_bmw_m3_car-1440x900-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="orange_bmw_m3_car-1440x900" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2013-12-02T17:07:27+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>02 Dec 2013</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/orange-county-bmw/">Orange County BMW</a></p>
+							</div>
+						</div>
+
+											</div>
+									<div class="tab-posts-cat-22 tabs-panel ">
+						
+						<div class="first-post clearfix post-187 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle category-travel tag-featured">
+							<a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" class="post-thumbnail">
+								<img width="1170" height="675" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/12/modern-metal-statue-in-a-chicago-1-1170x675.jpg" class="attachment-magtimate_gallery-thumb-large size-magtimate_gallery-thumb-large" alt="modern-metal-statue-in-a-chicago" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/admin/" title="View all posts by admin" rel="author">
+										admin									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T06:11:37+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/">Wonderful city park at dusk</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-1993 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion category-lifestyle category-travel tag-featured">
+							<a href="http://jollythemes.com/wordpress/magtimate/summer-flip-flops-on-the-beach/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/sun_sand_sunglasses-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="sun_sand_sunglasses" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-06-01T03:45:40+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>01 Jun 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/summer-flip-flops-on-the-beach/">Summer flip flops on the beach</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2336 post type-post status-publish format-video has-post-thumbnail hentry category-lifestyle category-travel category-web-design tag-featured post_format-post-format-video">
+							<a href="http://jollythemes.com/wordpress/magtimate/mushroom-houses-of-charlevoix/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/mushroom_houses-1390987-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="mushroom_houses-1390987" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-05-31T16:37:23+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>31 May 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/mushroom-houses-of-charlevoix/">Mushroom Houses Of Charlevoix</a></p>
+							</div>
+						</div>
+
+						
+						<div class="clearfix post-2013 post type-post status-publish format-standard has-post-thumbnail hentry category-lifestyle category-travel category-web-design">
+							<a href="http://jollythemes.com/wordpress/magtimate/the-state-capitol-of-texas/" class="post-thumbnail">
+								<img width="85" height="75" src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/1474369-1-85x75.jpg" class="attachment-magtimate_popular-news-thumb size-magtimate_popular-news-thumb" alt="h" />							</a>
+
+							<div class="post-info">
+								<span class="entry-author">
+									<i class="fa fa-user"></i>
+									<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+										trendingtemplates									</a>
+								</span>
+								<time class="entry-date" datetime="2015-05-31T16:34:50+00:00">
+									<i class="fa fa-clock-o"></i>
+									<span>31 May 2015</span>
+								</time>
+
+								<p class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/the-state-capitol-of-texas/">The State Capitol of Texas</a></p>
+							</div>
+						</div>
+
+											</div>
+				
+		</div>
+
+		</li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-2319' id='mega-menu-item-2319'><a class="mega-menu-link" href="#">Pages</a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-current_page_parent mega-menu-item-2345' id='mega-menu-item-2345'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/blog/">Blog</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-2353' id='mega-menu-item-2353'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/contact-us/">Contact</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-2321' id='mega-menu-item-2321'><a class="mega-menu-link" href="http://demo.themealien.com/magtimate/nothing">404</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-2323' id='mega-menu-item-2323'><a class="mega-menu-link" href="#">Post Formats</a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-2361' id='mega-menu-item-2361'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/lomo-retro-bicycle-nature/">Post Default</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-2355' id='mega-menu-item-2355'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/">Post Image</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-2357' id='mega-menu-item-2357'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/summer-women-gucci-sunglasses/">Post Gallery</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-2359' id='mega-menu-item-2359'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/soundcloud-music-is-everywhere/">Post Soundcloud</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-2326' id='mega-menu-item-2326'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/sun-moon-times-today/">Post Quotes</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-post mega-menu-item-2327' id='mega-menu-item-2327'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/lara-sky-plane-girl-movie/">Post Link</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-2343' id='mega-menu-item-2343'><a class="mega-menu-link" href="http://jollythemes.com/wordpress/magtimate/contact-us/">Contact Us</a></li>
+			<li class="menu-extra-item menu-item-search">
+				<i class="fa fa-search"></i>
+				<form class="search-form" method="get" action="http://jollythemes.com/wordpress/magtimate/" role="search">
+					<input type="search" class="search-field" name="s">
+				</form>
+			</li></ul></div>				</div>
+			</nav><!-- #site-navigation -->
+		</header><!-- #masthead -->
+
+		
+			<div class="breaking-news ">
+				<div class="container">
+					<div class="brk-news" id="brk-news-scroll-5aa698aee63dc">
+						<div class="brk-scroll">
+							<span class="brk-title">Breaking</span>
+							<div class="brk-list"><ul>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" title="Wonderful city park at dusk" class="post-title">Wonderful city park at dusk</a>
+				<time class="post-date" datetime="2015-06-01T06:11:37+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/city-night-building/" title="City Night Building" class="post-title">City Night Building</a>
+				<time class="post-date" datetime="2015-06-01T06:00:06+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/" title="Amazing love stories" class="post-title">Amazing love stories</a>
+				<time class="post-date" datetime="2015-06-01T05:00:39+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/summer-women-gucci-sunglasses/" title="Summer women gucci sunglasses" class="post-title">Summer women gucci sunglasses</a>
+				<time class="post-date" datetime="2015-06-01T04:00:14+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/list-of-sport-utility-vehicles/" title="List of sport utility vehicles" class="post-title">List of sport utility vehicles</a>
+				<time class="post-date" datetime="2015-06-01T03:50:10+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/summer-flip-flops-on-the-beach/" title="Summer flip flops on the beach" class="post-title">Summer flip flops on the beach</a>
+				<time class="post-date" datetime="2015-06-01T03:45:40+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/fresh-summer-cocktail/" title="Fresh summer cocktail" class="post-title">Fresh summer cocktail</a>
+				<time class="post-date" datetime="2015-05-31T17:16:12+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/the-girl-on-a-motorcycle/" title="The Girl on a Motorcycle" class="post-title">The Girl on a Motorcycle</a>
+				<time class="post-date" datetime="2015-05-31T17:13:22+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/bungee-jump/" title="Bungee jump" class="post-title">Bungee jump</a>
+				<time class="post-date" datetime="2015-05-31T17:09:45+00:00">3 years ago</time>
+				</li>
+				<li>
+				<a href="http://jollythemes.com/wordpress/magtimate/happy-easter-wishes-and-greetings/" title="Happy Easter Wishes and Greetings" class="post-title">Happy Easter Wishes and Greetings</a>
+				<time class="post-date" datetime="2015-05-31T17:03:49+00:00">3 years ago</time>
+				</li></ul></div>
+							
+			<div class="brk-controls">
+				<span class="brk-prev"><i class="fa fa-angle-double-left"></i></span>
+				<span class="brk-next"><i class="fa fa-angle-double-right"></i></span>
+			</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<div id="breadcrumbs" class="site-breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs">
+				<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a class="home" href="http://jollythemes.com/wordpress/magtimate" itemprop="url"><span itemprop="title">Home</span></a>
+			</span><span class="separator"><i class="fa fa-angle-right"></i></span>
+		<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<span itemprop="title">Tech</span>
+		</span>
+				</div>
+		</div>
+	</div>
+
+	<div class="category-area">
+			<div class="container"><div class="category-area category-area-1">
+			<div class="cat-header">
+				<div class="row">
+					<div class="col-md-8 col-sm-8 col-md-offset-2">
+						<h1 class="cat-title">Tech</h1>
+						<div class="cat-desc"></div>
+					</div>
+				</div>
+
+			</div></div></div>
+		</div>
+		<div id="content" class="site-content">
+							<div class="container">
+					<div class="row">
+			
+<div id="primary" class="content-area col-md-8 col-sm-8 col-xs-12">
+    <main id="main" class="site-main" role="main">
+
+                    
+                                    
+                
+                <article id="post-2029" class="blog-item post-2029 post type-post status-publish format-image has-post-thumbnail hentry category-entertainment category-mobiles category-outside-electronic category-sound-devices category-tablets-ipads category-tech post_format-post-format-image">
+	<header class="entry-header entry-post clearfix">
+		<div class='entry-format format-image'><a class="entry-image" href="http://jollythemes.com/wordpress/magtimate/camera-hi-tech-city-lights/" title="Camera Hi-Tech City Lights"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/6904310-hi-tech-camera-bokeh-1-775x345.jpg" alt="Camera Hi-Tech City Lights"></a></div>		<h2 class="entry-title"><a href="http://jollythemes.com/wordpress/magtimate/camera-hi-tech-city-lights/" title="Camera Hi-Tech City Lights" rel="bookmark">Camera Hi-Tech City Lights</a></h2>
+		<div class="entry-meta">
+			<span class="entry-author">
+				<i class="fa fa-user"></i>
+				<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/themealien/" title="View all posts by trendingtemplates" rel="author">
+					trendingtemplates				</a>
+			</span>
+			<time class="entry-date" datetime="2015-05-31T16:51:47+00:00">
+				<i class="fa fa-clock-o"></i>
+				<span>31 May 2015</span>
+			</time>
+			<span class="entry-comments">
+				<i class="fa fa-comment"></i>
+				<a href="http://jollythemes.com/wordpress/magtimate/camera-hi-tech-city-lights/#respond" class="comments-link" >0 comment</a>			</span>
+		</div>
+	</header>
+
+	<div class="entry-summary">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis ligula pellentesque nisi tristique porta. Vestibulum eget nisi est. Vivamus pharetra mattis ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc eget nisl vel nisl pellentesque semper sed quis tellus. Integer euismod consequat ipsum eget congue. Aliquam sit amet&hellip;</p>
+	</div>
+
+	<footer class="entry-footer">
+		<a class="read-more" href="http://jollythemes.com/wordpress/magtimate/camera-hi-tech-city-lights/">Read more</a>
+	</footer>
+</article><!-- #post-## -->
+
+            
+                
+                <article id="post-2000" class="blog-item post-2000 post type-post status-publish format-video has-post-thumbnail hentry category-desktops category-entertainment category-gadgets category-home-electronics category-lifestyle category-tech tag-featured post_format-post-format-video">
+	<header class="entry-header entry-post clearfix">
+		<div class='entry-format format-video'><iframe src="https://player.vimeo.com/video/109473588" width="640" height="338" frameborder="0" title="The Shadow Campaign // Sanctuary" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>		<h2 class="entry-title"><a href="http://jollythemes.com/wordpress/magtimate/jack-pierre-watch-blue/" title="Jack pierre watch blue" rel="bookmark">Jack pierre watch blue</a></h2>
+		<div class="entry-meta">
+			<span class="entry-author">
+				<i class="fa fa-user"></i>
+				<a class="url fn n" href="http://jollythemes.com/wordpress/magtimate/author/admin/" title="View all posts by admin" rel="author">
+					admin				</a>
+			</span>
+			<time class="entry-date" datetime="2015-05-31T16:17:57+00:00">
+				<i class="fa fa-clock-o"></i>
+				<span>31 May 2015</span>
+			</time>
+			<span class="entry-comments">
+				<i class="fa fa-comment"></i>
+				<a href="http://jollythemes.com/wordpress/magtimate/jack-pierre-watch-blue/#respond" class="comments-link" >0 comment</a>			</span>
+		</div>
+	</header>
+
+	<div class="entry-summary">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis ligula pellentesque nisi tristique porta. Vestibulum eget nisi est. Vivamus pharetra mattis ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc eget nisl vel nisl pellentesque semper sed quis tellus. Integer euismod consequat ipsum eget congue. Aliquam sit amet&hellip;</p>
+	</div>
+
+	<footer class="entry-footer">
+		<a class="read-more" href="http://jollythemes.com/wordpress/magtimate/jack-pierre-watch-blue/">Read more</a>
+	</footer>
+</article><!-- #post-## -->
+
+            
+            
+        
+    </main>
+    <!-- #main -->
+</div><!-- #primary -->
+
+
+<div id="secondary" class="widget-area col-md-4 col-sm-4 " role="complementary">
+	<div id="social-links-widget-1" class="widget social-links-widget social-links"><h4 class="widget-title"><span>Stay Connected</span></h4><div class="socials-list"><a href="#" class="share-facebook tooltip-enable" rel="nofollow" title="Facebook" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-facebook"></i></a><a href="#" class="share-twitter tooltip-enable" rel="nofollow" title="Twitter" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-twitter"></i></a><a href="#" class="share-google-plus tooltip-enable" rel="nofollow" title="Google Plus" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-google-plus"></i></a><a href="#" class="share-vimeo-square tooltip-enable" rel="nofollow" title="Vimeo" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-vimeo-square"></i></a><a href="#" class="share-linkedin tooltip-enable" rel="nofollow" title="Linkedin" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-linkedin"></i></a><div class="desc">10 Million Followers</div></div></div><div id="categories-3" class="widget widget_categories"><h4 class="widget-title"><span>Categories</span></h4>		<ul>
+	<li class="cat-item cat-item-30"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/desktops/" >Desktops</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/dvd-and-blu-ray/" >DVD and Blu-Ray</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="http://jollythemes.com/wordpress/magtimate/category/music/electric-and-disco/" >Electric and Disco</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="http://jollythemes.com/wordpress/magtimate/category/entertainment/" title="Nunc mattis ligula pellentesque nisi tristique porta. Vestibulum eget nisi est. Vivamus pharetra mattis">Entertainment</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://jollythemes.com/wordpress/magtimate/category/events/" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis ligula pellentesque nisi tristique porta">Events</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://jollythemes.com/wordpress/magtimate/category/fashion/" title="Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil">Fashion</a>
+</li>
+	<li class="cat-item cat-item-33"><a href="http://jollythemes.com/wordpress/magtimate/category/news/funny/" >Funny</a>
+</li>
+	<li class="cat-item cat-item-34"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/gadgets/" >Gadgets</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://jollythemes.com/wordpress/magtimate/category/games/" >Games</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://jollythemes.com/wordpress/magtimate/category/health/" >Health</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="http://jollythemes.com/wordpress/magtimate/category/music/hip-hoprap/" >Hip Hop/Rap</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/home-electronics/" >Home Electronics</a>
+</li>
+	<li class="cat-item cat-item-37"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/in-theaters/" >In Theaters</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/latest-releases/" >Latest Releases</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="http://jollythemes.com/wordpress/magtimate/category/music/latino/" >Latino</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://jollythemes.com/wordpress/magtimate/category/lifestyle/" >Lifestyle</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://jollythemes.com/wordpress/magtimate/category/games/mobile-games/" >Mobile Games</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/mobiles/" >Mobiles</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://jollythemes.com/wordpress/magtimate/category/music/" >Music</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="http://jollythemes.com/wordpress/magtimate/category/news/nation/" >Nation</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://jollythemes.com/wordpress/magtimate/category/news/" >News</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://jollythemes.com/wordpress/magtimate/category/games/nintendo/" >Nintendo</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/on-tonight/" >On Tonight</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/outside-electronic/" >Outside Electronic</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://jollythemes.com/wordpress/magtimate/category/games/pc/" >PC</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://jollythemes.com/wordpress/magtimate/category/games/playstation/" >Playstation</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://jollythemes.com/wordpress/magtimate/category/news/politics/" >Politics</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://jollythemes.com/wordpress/magtimate/category/music/pop/" >Pop</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="http://jollythemes.com/wordpress/magtimate/category/games/portable-consoles/" >Portable Consoles</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://jollythemes.com/wordpress/magtimate/category/music/rb/" >R&amp;B</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="http://jollythemes.com/wordpress/magtimate/category/music/ragga/" >Ragga</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://jollythemes.com/wordpress/magtimate/category/music/rock-and-roll/" >Rock and Roll</a>
+</li>
+	<li class="cat-item cat-item-44"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/showtime-and-tickets/" >Showtime and Tickets</a>
+</li>
+	<li class="cat-item cat-item-45"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/sound-devices/" >Sound Devices</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="http://jollythemes.com/wordpress/magtimate/category/sports/" >Sports</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/tablets-ipads/" >Tablets / Ipads</a>
+</li>
+	<li class="cat-item cat-item-21 current-cat"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/" >Tech</a>
+</li>
+	<li class="cat-item cat-item-47"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/trailers/" >Trailers</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="http://jollythemes.com/wordpress/magtimate/category/travel/" title="Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates">Travel</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/" >TV &amp; Movies</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/tv-home/" >TV Home</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="http://jollythemes.com/wordpress/magtimate/category/news/weather/" >Weather</a>
+</li>
+	<li class="cat-item cat-item-26"><a href="http://jollythemes.com/wordpress/magtimate/category/web-design/" >Web Design</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="http://jollythemes.com/wordpress/magtimate/category/work/" >Work</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="http://jollythemes.com/wordpress/magtimate/category/news/world/" >World</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="http://jollythemes.com/wordpress/magtimate/category/games/xbox-one/" >Xbox One</a>
+</li>
+		</ul>
+</div><div id="tabs-widget-1" class="widget tabs-widget"><div class="tabs"><ul class="tabs-nav"><li><a href="#" class="active">Popular</a></li><li><a href="#">Recent</a></li><li><a href="#">Comments</a></li></ul>
+		
+						<div class="tab-popular-posts tabs-panel active">
+				
+					<article class="popular-post thumb-left">
+						<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" title="Wonderful city park at dusk"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/12/modern-metal-statue-in-a-chicago-1-85x75.jpg" alt="Wonderful city park at dusk"></a>						<div class="post-text">
+							<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>admin</span><time class="post-date" datetime="2015-06-01T06:11:37+00:00"><i class="fa fa-clock-o"></i>01 Jun 2015</time></div>							<h2 class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" title="Permalink to Wonderful city park at dusk" rel="bookmark">Wonderful city park at dusk</a></h2>
+						</div>
+					</article>
+
+				
+					<article class="popular-post thumb-left">
+						<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/sun-moon-times-today/" title="Sun &#038; moon times today"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2012/11/processing_moscow_sunset-1-85x75.jpg" alt="Sun &#038; moon times today"></a>						<div class="post-text">
+							<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>trendingtemplates</span><time class="post-date" datetime="2012-11-29T04:00:15+00:00"><i class="fa fa-clock-o"></i>29 Nov 2012</time></div>							<h2 class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/sun-moon-times-today/" title="Permalink to Sun &#038; moon times today" rel="bookmark">Sun &#038; moon times today</a></h2>
+						</div>
+					</article>
+
+				
+					<article class="popular-post thumb-left">
+						<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/music-is-everywhere/" title="Music is everywhere"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/10/trava-soloma-gitara-deka-1-85x75.jpg" alt="Music is everywhere"></a>						<div class="post-text">
+							<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>trendingtemplates</span><time class="post-date" datetime="2013-09-01T01:00:44+00:00"><i class="fa fa-clock-o"></i>01 Sep 2013</time></div>							<h2 class="post-title"><a href="http://jollythemes.com/wordpress/magtimate/music-is-everywhere/" title="Permalink to Music is everywhere" rel="bookmark">Music is everywhere</a></h2>
+						</div>
+					</article>
+
+							</div>
+
+		
+								<div class="tab-recent-posts tabs-panel thumb-left">
+							<article class="recent-post thumb-left">
+				<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" title="Wonderful city park at dusk"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/12/modern-metal-statue-in-a-chicago-1-85x75.jpg" alt="Wonderful city park at dusk"></a>				<div class="post-text">
+					<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>admin</span><time class="post-date" datetime="2015-06-01T06:11:37+00:00"><i class="fa fa-clock-o"></i>01 Jun 2015</time></div>					<h2 class="post-title"> <a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" title="Wonderful city park at dusk" rel="bookmark">Wonderful city park at dusk</a></h2>
+									</div>
+			</article>
+					<article class="recent-post thumb-left">
+				<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/city-night-building/" title="City Night Building"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/paris-36-preview-1-85x75.jpg" alt="City Night Building"></a>				<div class="post-text">
+					<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>trendingtemplates</span><time class="post-date" datetime="2015-06-01T06:00:06+00:00"><i class="fa fa-clock-o"></i>01 Jun 2015</time></div>					<h2 class="post-title"> <a href="http://jollythemes.com/wordpress/magtimate/city-night-building/" title="City Night Building" rel="bookmark">City Night Building</a></h2>
+									</div>
+			</article>
+					<article class="recent-post thumb-left">
+				<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/" title="Amazing love stories"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/06/Love-Couple-Wallpaper-1-1-85x75.jpg" alt="Amazing love stories"></a>				<div class="post-text">
+					<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>trendingtemplates</span><time class="post-date" datetime="2015-06-01T05:00:39+00:00"><i class="fa fa-clock-o"></i>01 Jun 2015</time></div>					<h2 class="post-title"> <a href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/" title="Amazing love stories" rel="bookmark">Amazing love stories</a></h2>
+									</div>
+			</article>
+					</div>
+
+		
+		<div class="tab-comments tabs-panel"><div class="comment">
+						<p class="comment-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="author-comment">by John Saddington</span></p>
+						<span class="post-comment">on <a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/#comments" title="Wonderful city park at dusk">Wonderful city park at dusk</a></span>
+					</div><div class="comment">
+						<p class="comment-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis&hellip; <span class="author-comment">by Chris Ames</span></p>
+						<span class="post-comment">on <a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/#comments" title="Wonderful city park at dusk">Wonderful city park at dusk</a></span>
+					</div><div class="comment">
+						<p class="comment-summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis&hellip; <span class="author-comment">by Jared Erickson</span></p>
+						<span class="post-comment">on <a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/#comments" title="Wonderful city park at dusk">Wonderful city park at dusk</a></span>
+					</div></div></div></div><div id="ta-flickr-widget-1" class="widget flickr-widget"><h4 class="widget-title"><span>Flickr Images</span></h4><div class="flickr-photos"><script src="http://www.flickr.com/badge_code_v2.gne?count=8&#038;display=latest&#038;size=s&#038;source=user&#038;user=127717849@N07&#038;layout=x"></script></div></div></div><!-- #secondary -->
+						</div> <!-- .row -->
+			</div><!-- .container -->
+			</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="footer-top-widgets widgets-area">
+		<div class="container">
+			<div class="row">
+										<div class="footer-sidebar-1 footer-sidebar col-xs-6 col-sms-12 col-sm-4">
+							<div id="text-3" class="widget widget_text">			<div class="textwidget"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2016/04/logo-mag-1.png" alt="Magtimate" style="margin-bottom: 20px">
+
+<p>Qras at justto varius tempus nibh hen drerito gravida dui. Duis biquet lectus in quamizes accumsan, a suscipit sapien pretium pullami nevelit fringilla id risus vel.</p>
+<a class="read-more text-right" href="#">Read More</a></div>
+		</div><div id="social-links-widget-3" class="widget social-links-widget social-links"><h4 class="widget-title"><span>Stay In Touch</span></h4><div class="socials-list"><a href="#" class="share-facebook tooltip-enable" rel="nofollow" title="Facebook" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-facebook"></i></a><a href="#" class="share-twitter tooltip-enable" rel="nofollow" title="Twitter" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-twitter"></i></a><a href="#" class="share-google-plus tooltip-enable" rel="nofollow" title="Google Plus" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-google-plus"></i></a><a href="#" class="share-vimeo-square tooltip-enable" rel="nofollow" title="Vimeo" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-vimeo-square"></i></a><a href="#" class="share-linkedin tooltip-enable" rel="nofollow" title="Linkedin" data-toggle="tooltip" data-placement="top" target="_blank"><i class="fa fa-linkedin"></i></a></div></div>						</div>
+										<div class="footer-sidebar-2 footer-sidebar col-xs-6 col-sms-12 col-sm-4">
+							<div id="tweets-widget-1" class="widget tweets-widget"><h4 class="widget-title"><span>Latest Tweets</span></h4><div class="tweet-list"><div class="tweet-item"><i class="fa fa-twitter"></i><div class="tweet-text">The Month in WordPress: February 2018 <a rel="nofollow" target="_blank" href="https://t.co/5O1AcSGwqn">https://t.co/5O1AcSGwqn</a></div></div><div class="tweet-item"><i class="fa fa-twitter"></i><div class="tweet-text">WordCamp Incubator 2.0 <a rel="nofollow" target="_blank" href="https://t.co/HqgxcrhZ6W">https://t.co/HqgxcrhZ6W</a></div></div><div class="tweet-item"><i class="fa fa-twitter"></i><div class="tweet-text">WordPress 4.9.4 Maintenance Release <a rel="nofollow" target="_blank" href="https://t.co/lOelolfR9O">https://t.co/lOelolfR9O</a></div></div><div class="tweet-item"><i class="fa fa-twitter"></i><div class="tweet-text">WordPress 4.9.3 Maintenance Release <a rel="nofollow" target="_blank" href="https://t.co/bHlD9CHvRw">https://t.co/bHlD9CHvRw</a></div></div></div></div>						</div>
+										<div class="footer-sidebar-3 footer-sidebar col-xs-6 col-sms-12 col-sm-4">
+							<div id="recent-posts-widget-1" class="widget recent-posts-widget"><h4 class="widget-title"><span>Latest Posts</span></h4>			<article class="recent-post thumb-left">
+				<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" title="Wonderful city park at dusk"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2013/12/modern-metal-statue-in-a-chicago-1-85x75.jpg" alt="Wonderful city park at dusk"></a>				<div class="post-text">
+					<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>admin</span><time class="post-date" datetime="2015-06-01T06:11:37+00:00"><i class="fa fa-clock-o"></i>01 Jun 2015</time></div>					<h2 class="post-title"> <a href="http://jollythemes.com/wordpress/magtimate/wonderful-city-park-at-dusk/" title="Wonderful city park at dusk" rel="bookmark">Wonderful city park at dusk</a></h2>
+									</div>
+			</article>
+					<article class="recent-post thumb-left">
+				<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/city-night-building/" title="City Night Building"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/05/paris-36-preview-1-85x75.jpg" alt="City Night Building"></a>				<div class="post-text">
+					<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>trendingtemplates</span><time class="post-date" datetime="2015-06-01T06:00:06+00:00"><i class="fa fa-clock-o"></i>01 Jun 2015</time></div>					<h2 class="post-title"> <a href="http://jollythemes.com/wordpress/magtimate/city-night-building/" title="City Night Building" rel="bookmark">City Night Building</a></h2>
+									</div>
+			</article>
+					<article class="recent-post thumb-left">
+				<a class="widget-thumb" href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/" title="Amazing love stories"><img src="http://jollythemes.com/wordpress/magtimate/wp-content/uploads/2015/06/Love-Couple-Wallpaper-1-1-85x75.jpg" alt="Amazing love stories"></a>				<div class="post-text">
+					<div class="post-header"><span class="post-author"><i class="fa fa-user"></i>trendingtemplates</span><time class="post-date" datetime="2015-06-01T05:00:39+00:00"><i class="fa fa-clock-o"></i>01 Jun 2015</time></div>					<h2 class="post-title"> <a href="http://jollythemes.com/wordpress/magtimate/amazing-love-stories/" title="Amazing love stories" rel="bookmark">Amazing love stories</a></h2>
+									</div>
+			</article>
+		</div>						</div>
+							</div>
+		</div>
+	</div>
+		<div class="footer-bottom-widgets widgets-area">
+		<div class="container">
+			<div class="row">
+										<div class="footer-sidebar-1 footer-sidebar col-xs-6 col-sm-2-ths col-sms-12">
+							<div id="nav_menu-1" class="widget widget_nav_menu"><h4 class="widget-title"><span>News</span></h4><div class="menu-footer-menu-1-container"><ul id="menu-footer-menu-3" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2249"><a href="http://jollythemes.com/wordpress/magtimate/category/news/nation/">Nation</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2100"><a href="http://jollythemes.com/wordpress/magtimate/category/news/world/">World</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2096"><a href="http://jollythemes.com/wordpress/magtimate/category/news/funny/">Funny</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2251"><a href="http://jollythemes.com/wordpress/magtimate/category/news/politics/">Politics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2099"><a href="http://jollythemes.com/wordpress/magtimate/category/news/weather/">Weather</a></li>
+</ul></div></div>						</div>
+										<div class="footer-sidebar-2 footer-sidebar col-xs-6 col-sm-2-ths col-sms-12">
+							<div id="nav_menu-2" class="widget widget_nav_menu"><h4 class="widget-title"><span>Music</span></h4><div class="menu-footer-menu-2-container"><ul id="menu-footer-menu-6" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2250"><a href="http://jollythemes.com/wordpress/magtimate/category/music/hip-hoprap/">Hip Hop/Rap</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2254"><a href="http://jollythemes.com/wordpress/magtimate/category/music/pop/">Pop</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2256"><a href="http://jollythemes.com/wordpress/magtimate/category/music/rb/">R&#038;B</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2101"><a href="http://jollythemes.com/wordpress/magtimate/category/music/electric-and-disco/">Electric and Disco</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2252"><a href="http://jollythemes.com/wordpress/magtimate/category/music/latino/">Latino</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2268"><a href="http://jollythemes.com/wordpress/magtimate/category/music/ragga/">Ragga</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2270"><a href="http://jollythemes.com/wordpress/magtimate/category/music/rock-and-roll/">Rock and Roll</a></li>
+</ul></div></div>						</div>
+										<div class="footer-sidebar-3 footer-sidebar col-xs-6 col-sm-2-ths col-sms-12">
+							<div id="nav_menu-3" class="widget widget_nav_menu"><h4 class="widget-title"><span>TV &#038; Movies</span></h4><div class="menu-footer-menu-3-container"><ul id="menu-footer-menu-7" class="menu"><li id="menu-item-2263" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2263"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/in-theaters/">In Theaters</a></li>
+<li id="menu-item-2269" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2269"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/showtime-and-tickets/">Showtime and Tickets</a></li>
+<li id="menu-item-2276" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2276"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/latest-releases/">Latest Releases</a></li>
+<li id="menu-item-2278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2278"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/on-tonight/">On Tonight</a></li>
+<li id="menu-item-2271" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2271"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/trailers/">Trailers</a></li>
+<li id="menu-item-2284" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2284"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/tv-home/">TV Home</a></li>
+<li id="menu-item-2272" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2272"><a href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/dvd-and-blu-ray/">DVD and Blu-Ray</a></li>
+</ul></div></div>						</div>
+										<div class="footer-sidebar-4 footer-sidebar col-xs-6 col-sm-2-ths col-sms-12">
+							<div id="nav_menu-4" class="widget widget_nav_menu"><h4 class="widget-title"><span>Tech</span></h4><div class="menu-footer-menu-4-container"><ul id="menu-footer-menu-8" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2292"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/mobiles/">Mobiles</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2298"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/tablets-ipads/">Tablets / Ipads</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2286"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/desktops/">Desktops</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2288"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/gadgets/">Gadgets</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2279"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/home-electronics/">Home Electronics</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2294"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/outside-electronic/">Outside Electronic</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2296"><a href="http://jollythemes.com/wordpress/magtimate/category/tech/sound-devices/">Sound Devices</a></li>
+</ul></div></div>						</div>
+										<div class="footer-sidebar-5 footer-sidebar col-xs-6 col-sm-2-ths col-sms-12">
+							<div id="nav_menu-5" class="widget widget_nav_menu"><h4 class="widget-title"><span>Games</span></h4><div class="menu-footer-menu-5-container"><ul id="menu-footer-menu-9" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2293"><a href="http://jollythemes.com/wordpress/magtimate/category/games/pc/">PC</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2295"><a href="http://jollythemes.com/wordpress/magtimate/category/games/playstation/">Playstation</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2300"><a href="http://jollythemes.com/wordpress/magtimate/category/games/mobile-games/">Mobile Games</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2297"><a href="http://jollythemes.com/wordpress/magtimate/category/games/portable-consoles/">Portable Consoles</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2299"><a href="http://jollythemes.com/wordpress/magtimate/category/games/xbox-one/">Xbox One</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2302"><a href="http://jollythemes.com/wordpress/magtimate/category/games/nintendo/">Nintendo</a></li>
+</ul></div></div>						</div>
+							</div>
+		</div>
+	</div>
+		<div class="site-info">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<div class="copyright">Copyright © 2015 by TrendingTemplates. All Rights Reserved.</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 text-right">
+				<nav id="footer-menu" class="footer-menu"><ul id="menu-footer-menu" class="menu"><li id="menu-item-2340" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2340"><a href="http://jollythemes.com/wordpress/magtimate/">Home</a></li>
+<li id="menu-item-2301" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2301"><a href="#">About</a></li>
+<li id="menu-item-2303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2303"><a href="#">Archives</a></li>
+<li id="menu-item-2305" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2305"><a href="#">Privacy</a></li>
+<li id="menu-item-2316" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2316"><a href="#">Contact</a></li>
+</ul></nav>
+				</div>
+			</div>
+		</div>
+	</div>
+		</footer><!-- #colophon -->
+		<a id="scroll-top" class="backtotop" href="#page-top">
+		<i class="fa fa-angle-up"></i>
+	</a>
+	</div><!-- #page -->
+
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/jollythemes.com\/wordpress\/magtimate\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.4.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"http:\/\/jollythemes.com\/wordpress\/magtimate\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/wp-polls/polls-js.js?ver=2.72'></script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/themes/magtimate/js/plugins.min.js?ver=1.0'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var magtimateShortCode = {"breakingScroll":{"brk-news-scroll-5aa698aee63dc":{"speed":20,"autoplay":"true"}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/themes/magtimate/js/scripts.min.js?ver=1.0'></script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var megamenu = {"effect":{"fade":{"in":{"animate":{"opacity":"show"},"css":{"display":"none"}},"out":{"animate":{"opacity":"hide"}},"speed":"fast"},"slide":{"in":{"animate":{"height":"show"},"css":{"display":"none"}},"out":{"animate":{"height":"hide"}},"speed":"fast"}},"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=2.1.4'></script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-includes/js/wp-embed.min.js?ver=4.4.14'></script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/magtimate-vc-addons//assets/js/plugins.js?ver=1.0.0'></script>
+<script type='text/javascript' src='http://jollythemes.com/wordpress/magtimate/wp-content/plugins/magtimate-vc-addons//assets/js/frontend.js?ver=1.0.0'></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a80ade10c9","applicationID":"38857893","transactionName":"YVIDbEFYCxJSUkcMW1gYIFtHUAoPHFBBBlxfQQQ=","queueTime":0,"applicationTime":1429,"atts":"TRUAGglCGBw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

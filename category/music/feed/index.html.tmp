@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Music &#8211; Magtimate Magazine WordPress Theme</title>
+	<atom:link href="http://jollythemes.com/wordpress/magtimate/category/music/feed/" rel="self" type="application/rss+xml" />
+	<link>http://jollythemes.com/wordpress/magtimate</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Wed, 13 Apr 2016 09:42:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.14</generator>
+	<item>
+		<title>Music is everywhere</title>
+		<link>http://jollythemes.com/wordpress/magtimate/music-is-everywhere/</link>
+		<comments>http://jollythemes.com/wordpress/magtimate/music-is-everywhere/#respond</comments>
+		<pubDate>Sun, 01 Sep 2013 01:00:44 +0000</pubDate>
+		<dc:creator><![CDATA[trendingtemplates]]></dc:creator>
+				<category><![CDATA[Electric and Disco]]></category>
+		<category><![CDATA[Entertainment]]></category>
+		<category><![CDATA[Hip Hop/Rap]]></category>
+		<category><![CDATA[Latino]]></category>
+		<category><![CDATA[Music]]></category>
+		<category><![CDATA[Pop]]></category>
+		<category><![CDATA[R&B]]></category>
+		<category><![CDATA[Ragga]]></category>
+		<category><![CDATA[Rock and Roll]]></category>
+
+		<guid isPermaLink="false">http://wpthemetestdata.wordpress.com/?p=587</guid>
+		<description><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat eu lacus in facilisis. Vivamus sit amet imperdiet eros. Quisque condimentum eros at tortor hendrerit, non consectetur metus malesuada. Nam blandit nisl nisl. Nullam et leo ipsum. Etiam in elit in ex gravida convallis faucibus faucibus mauris. Curabitur faucibus nibh quis viverra finibus. Donec ligula&#8230;]]></description>
+				<content:encoded><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur placerat eu lacus in facilisis. Vivamus sit amet imperdiet eros. Quisque condimentum eros at tortor hendrerit, non consectetur metus malesuada. Nam blandit nisl nisl. Nullam et leo ipsum. Etiam in elit in ex gravida convallis faucibus faucibus mauris. Curabitur faucibus nibh quis viverra finibus. Donec ligula leo, fringilla quis luctus at, posuere a neque. Nulla facilisi. In in elementum purus. Pellentesque gravida purus aliquam neque gravida, sit amet iaculis urna tincidunt. Quisque ut egestas turpis. Proin orci felis, convallis eu elit at, commodo sollicitudin eros. Vestibulum ullamcorper neque tellus. Integer varius tellus a hendrerit fermentum.</p>
+<blockquote><p>Fusce vel dolor et nibh facilisis tempus et eu quam. Aenean id turpis eget nisl malesuada ornare. Curabitur tristique est et erat finibus, eu rhoncus neque congue. Donec hendrerit erat et tellus ullamcorper mollis efficitur et justo.</p></blockquote>
+<p>Sed in odio faucibus, sagittis lacus eu, tempor erat. Praesent tincidunt convallis vulputate. Donec enim lectus, hendrerit quis sapien at, mattis consectetur dui. Mauris tincidunt accumsan molestie. Ut vel laoreet nulla, in euismod tortor. Vestibulum volutpat urna sit amet mi tempor, vitae dignissim eros rutrum. Sed sit amet metus ut dolor gravida porta rhoncus non augue. Aenean eleifend sagittis mattis. Nunc ac interdum enim. Maecenas lobortis suscipit aliquam. Donec at augue sit amet eros sollicitudin ultricies et nec lorem. Sed dapibus diam libero, vel egestas est fermentum bibendum. Nulla in vehicula neque. Suspendisse ultricies ipsum nisi, vitae egestas turpis tristique ac.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://jollythemes.com/wordpress/magtimate/music-is-everywhere/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>

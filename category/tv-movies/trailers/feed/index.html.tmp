@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Trailers &#8211; Magtimate Magazine WordPress Theme</title>
+	<atom:link href="http://jollythemes.com/wordpress/magtimate/category/tv-movies/trailers/feed/" rel="self" type="application/rss+xml" />
+	<link>http://jollythemes.com/wordpress/magtimate</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Wed, 13 Apr 2016 09:42:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.4.14</generator>
+	<item>
+		<title>Sun &#038; moon times today</title>
+		<link>http://jollythemes.com/wordpress/magtimate/sun-moon-times-today/</link>
+		<comments>http://jollythemes.com/wordpress/magtimate/sun-moon-times-today/#respond</comments>
+		<pubDate>Thu, 29 Nov 2012 04:00:15 +0000</pubDate>
+		<dc:creator><![CDATA[trendingtemplates]]></dc:creator>
+				<category><![CDATA[DVD and Blu-Ray]]></category>
+		<category><![CDATA[In Theaters]]></category>
+		<category><![CDATA[Latest Releases]]></category>
+		<category><![CDATA[On Tonight]]></category>
+		<category><![CDATA[Showtime and Tickets]]></category>
+		<category><![CDATA[Trailers]]></category>
+		<category><![CDATA[TV & Movies]]></category>
+		<category><![CDATA[TV Home]]></category>
+		<category><![CDATA[Work]]></category>
+
+		<guid isPermaLink="false">http://wpthemetestdata.wordpress.com/?p=575</guid>
+		<description><![CDATA[Aenean et mi hendrerit, eleifend massa at, efficitur nisl. Morbi purus magna, sollicitudin nec orci sed, cursus egestas ex. Vivamus neque ex, euismod ac magna blandit, auctor laoreet felis. Quisque lectus nisl, placerat eget maximus et, feugiat eget tellus. Aenean pellentesque fringilla ex, sit amet auctor neque porta vel. Curabitur vitae dictum dui, ut tristique&#8230;]]></description>
+				<content:encoded><![CDATA[<p>Aenean et mi hendrerit, eleifend massa at, efficitur nisl. Morbi purus magna, sollicitudin nec orci sed, cursus egestas ex. Vivamus neque ex, euismod ac magna blandit, auctor laoreet felis. Quisque lectus nisl, placerat eget maximus et, feugiat eget tellus. Aenean pellentesque fringilla ex, sit amet auctor neque porta vel. Curabitur vitae dictum dui, ut tristique diam. Ut lacinia vehicula sem, quis venenatis nulla. Sed lobortis vulputate luctus. Integer a elit a arcu commodo accumsan in a urna. Proin ut libero ornare, ornare lectus ac, tincidunt arcu. Nulla lobortis odio vel interdum pellentesque. Sed quis purus consectetur lectus ultricies sodales. Aenean lacinia arcu et malesuada volutpat. Maecenas tincidunt ex pellentesque velit egestas, ut laoreet tellus cursus. Etiam volutpat luctus felis, sed bibendum odio facilisis id.</p>
+<p>Cras tincidunt egestas mollis. Nam vel scelerisque urna. Aenean tincidunt nunc ut fermentum sagittis. Maecenas commodo commodo sapien a ornare. Duis vestibulum ullamcorper purus, mattis finibus ipsum lacinia in. Vivamus dolor ligula, porttitor nec libero ut, faucibus maximus magna. Mauris et tempor ipsum. Proin nec turpis eros. Sed id nibh vel purus rhoncus efficitur at at sapien. Aliquam semper quis augue ac sodales. Sed erat nibh, fermentum ut feugiat quis, tincidunt non lorem. Phasellus ut posuere tortor, in hendrerit metus. Cras eu est sit amet diam dignissim viverra eu et leo. Donec urna ex, commodo aliquet bibendum nec, varius at nunc.</p>
+]]></content:encoded>
+			<wfw:commentRss>http://jollythemes.com/wordpress/magtimate/sun-moon-times-today/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+	</channel>
+</rss>
